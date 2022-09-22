@@ -48,6 +48,7 @@ function option1(){
 function option2(){
     do{
         var word = window.prompt("Por favor, introduce una palabra: ");
+        //No permitimos caracteres numéricos en las palabras
         var re = /^[a-zA-Z]+$/;
         var checkWord = re.test(word);
         if(!checkWord){
@@ -66,10 +67,13 @@ function option2(){
 //EJERCICIO 2
 function ejercicio2(){
     var sentence = window.prompt("Pues venga, introduce una frase: ");
+    //Limpiamos la frase para que no hayan dobles espacios
     sentence = sentence.replace("  "," ");
+    //ni espacios al inicio
     if (sentence[0]==" "){
         sentence = sentence.slice(1);
     }
+    //ni espacios al final
     if (sentence[sentence.length-1]==" "){
         sentence = sentence.substring(0, sentence.length - 1);
     }
