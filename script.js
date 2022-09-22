@@ -46,29 +46,21 @@ function option1(){
 }
 
 function option2(){
-    var word = window.prompt("Por favor, introduce una palabra: ");
+    do{
+        var word = window.prompt("Por favor, introduce una palabra: ");
+        var re = /^[a-zA-Z]+$/;
+        var checkWord = re.test(word);
+        if(!checkWord){
+            alert("OJO! Las palabras no tienen carácteres numéricos. Vuelve a intentarlo");
+        }
+    }while(!checkWord)
+
     var validation = word[0] == "a" && word[word.length-1] == "a";
     if (validation){
         alert("Yuhuu! La palabra " + word.toUpperCase() + " empieza y termina por A.")
     }else{
         alert("La palabra " + word.toUpperCase() + " empieza por "+ word[0].toUpperCase() +" y termina por "+ word[word.length-1].toUpperCase()+"." );
     }
-}
-
-function ejercicio1(){
-    var num = parseFloat(window.prompt("Elige una opción: "));
-    switch(num){
-        case 1: 
-            option1();
-            break;
-        case 2: 
-            option2();
-            break;
-        default:
-            alert("OJO! Esa opción NO es correcta"); 
-    }
-    
-    
 }
 
 //EJERCICIO 2
