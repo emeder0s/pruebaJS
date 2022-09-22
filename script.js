@@ -1,7 +1,7 @@
-//EJERCICIO1
+//EJERCICIO 1
 function option1(){
     do{
-        var num1 = parseFloat(window.prompt("Escribe un numero: "));
+        var num1 = parseFloat(window.prompt("Escribe un numero entero: "));
         
         var validation = Number.isInteger(num1)
         if(!validation){
@@ -10,13 +10,14 @@ function option1(){
     }while(!validation)
 
     do{
-        var num2 = parseFloat(window.prompt("Escribe otro numero: "));
+        var num2 = parseFloat(window.prompt("Escribe otro numero entero: "));
         
         var validation = Number.isInteger(num2)
         if(!validation){
             alert("OJO! NO es un número CORRECTO.");
         }
     }while(!validation)
+
     var pares = "";
     var multiplo = "";
 
@@ -40,23 +41,22 @@ function option1(){
         multiplo = "También " + num1 +" es de 25, pero " + num2 + " no lo es.";
     }else{
         multiplo = "Además en este caso, ninguno es múltiplo";
-    }1
-    2
+    }
+    
     alert(pares + multiplo);
 }
 
 function option2(){
     var word = window.prompt("Por favor, introduce una palabra: ");
-    var validation = word[0] == "a" || word[word.length-1] == "a";
+    var validation = word[0] == "a" && word[word.length-1] == "a";
     if (validation){
-        alert("Yuhuu! La palabra " + word.toUpperCase() + " empieza y termina por A")
+        alert("Yuhuu! La palabra " + word.toUpperCase() + " empieza y termina por A.")
     }else{
-        alert("Bueno, en este caso, la palabra " + word.toUpperCase() + ");
+        alert("La palabra " + word.toUpperCase() + " empieza por "+ word[0].toUpperCase() +" y termina por "+ word[word.length-1].toUpperCase()+"." );
     }
-
 }
 
-function chooseOption(){
+function ejercicio1(){
     var num = parseFloat(window.prompt("Elige una opción: "));
     switch(num){
         case 1: 
@@ -72,4 +72,28 @@ function chooseOption(){
     
 }
 
-chooseOption()
+//EJERCICIO 2
+function ejercicio2(){
+    var sentence = window.prompt("Pues venga, introduce una frase: ");
+    sentence = sentence.replace("  "," ");
+    if (sentence[0]==" "){
+        sentence = sentence.slice(1);
+    }
+    if (sentence[sentence.length-1]==" "){
+        sentence = sentence.substring(0, sentence.length - 1);
+    }
+    
+    let blanks = 0;
+    for (let i=0;i<sentence.length;i++){
+        if(sentence[i]== " "){
+            blanks++;
+        }
+    }
+    
+    if (blanks == 0){
+        alert("Esta frase tiene 1 única palabra");
+    }else{
+        numWords = blanks + 1;
+        alert("Esta frase tiene " + numWords + " palabras");
+    }
+}
