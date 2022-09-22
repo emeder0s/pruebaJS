@@ -1,8 +1,7 @@
 //EJERCICIO 1
 function option1(){
     do{
-        var num1 = parseFloat(window.prompt("Escribe un numero entero: "));
-        
+        var num1 = parseFloat(window.prompt("Escribe un numero entero: "));    
         var validation = Number.isInteger(num1)
         if(!validation){
             alert("OJO! NO es un número CORRECTO");
